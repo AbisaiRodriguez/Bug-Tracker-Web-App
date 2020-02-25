@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+      <h1 class="display-4">Welccome to Bug Tracker!</h1>
+      <p class="lead">This is a bug tracking app that has the functionality of adding bugs,
+           editing them and deleting them when they have been fixed.</p>
+    </div>
+    <% bugs.forEach(function(bug){ %>
+      <div class=" item">
+          <div class="content">
+              <a class="header" href="/bugs/<%= bug._id %>"><%= bug.title %></a>
+              <div class="meta">
+                  <span><%= bug.created.toDateString() %></span>
+              </div>
+              <div class="description">
+                  <p><%- bug.body.substring(0,100) %>... </p>
+              </div>
+          </div>
+      </div>
+   <% }) %>
+
+  </div>
+
+
+<%- include("partials/footer") %>
