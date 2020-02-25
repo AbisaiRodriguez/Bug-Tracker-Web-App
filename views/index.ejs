@@ -2,24 +2,25 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-center">
-      <h1 class="display-4">Welccome to Bug Tracker!</h1>
+      <h1 class="display-4">Welcome to Bug Tracker!</h1>
       <p class="lead">This is a bug tracking app that has the functionality of adding bugs,
            editing them and deleting them when they have been fixed.</p>
+           <% bugs.forEach(function(bug){ %>
+            <div class="card" style="width: 45rem;">
+              <div class="card-body">
+                <h5 class="card-title"><%= bug.title %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= bug.project %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= bug.area %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= bug.priority %></h6>
+                <p class="card-text"><%= bug.comment %></p>
+                <!--
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+                -->
+              </div>
+            </div>
+          <% }) %>
     </div>
-    <% bugs.forEach(function(bug){ %>
-      <div class=" item">
-          <div class="content">
-              <a class="header" href="/bugs/<%= bug._id %>"><%= bug.title %></a>
-              <div class="meta">
-                  <span><%= bug.created.toDateString() %></span>
-              </div>
-              <div class="description">
-                  <p><%- bug.body.substring(0,100) %>... </p>
-              </div>
-          </div>
-      </div>
-   <% }) %>
-
   </div>
 
 
