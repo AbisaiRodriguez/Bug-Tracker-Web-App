@@ -1,0 +1,26 @@
+{
+  "name": "bug-tracker-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbisaiRodriguez/Bug-Tracker-Web-App.git"
+  },
+  "author": "Abisai Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbisaiRodriguez/Bug-Tracker-Web-App/issues"
+  },
+  "homepage": "https://github.com/AbisaiRodriguez/Bug-Tracker-Web-App#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.2"
+  }
+}
