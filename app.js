@@ -63,6 +63,19 @@ app.post("/bugs", function(req, res){
     });
 });
 
+// SHOW ROUTE
+app.get("/bugs/:id", function(req, res){
+    Bug.findById(req.params.id, function(err, foundBug){
+        if(err){
+            res.redirect("/bugs");
+        }
+        else{
+            res.render("show", {bug: foundBug});
+        }
+    });
+
+});
+
 
 app.listen(3000, () => {
     console.log("Server is Running");

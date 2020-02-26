@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <a class="card-title" href="/bugs/<%= bug._id %>"><%= bug.title %></a>
+            <h6 class="card-subtitle mb-2 text-muted"><%= bug.project %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= bug.area %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= bug.priority %></h6>
+            <p class="card-text"><%= bug.comment %></p>
+            <a class="btn btn-primary" href="/bugs/<%= bug._id %>/edit">Edit</a>
+            <form id="delete" action="/bugs/<%= bug._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include("partials/footer") %>
