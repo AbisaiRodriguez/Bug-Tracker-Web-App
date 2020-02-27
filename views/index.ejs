@@ -5,21 +5,22 @@
       <h1 class="display-4">Welcome to Bug Tracker!</h1>
       <p class="lead">This is a bug tracking app that has the functionality of adding bugs,
            editing them and deleting them when they have been fixed.</p>
-           <% bugs.forEach(function(bug){ %>
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <a class="card-title" href="/bugs/<%= bug._id %>"><%= bug.title %></a>
-                <h6 class="card-subtitle mb-2 text-muted"><%= bug.project %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= bug.area %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= bug.priority %></h6>
-                <p class="card-text"><%= bug.comment %></p>
-                <!--
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                -->
-              </div>
-            </div>
-          <% }) %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <% bugs.forEach(function(bug){ %>            
+        <div class="card">
+          <div class="card-body">
+            <a class="card-title" href="/bugs/<%= bug._id %>"><%= bug.title %></a>
+            <h6 class="card-subtitle mb-2 text-muted"><%= bug.project %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= bug.area %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= bug.priority %></h6>
+            <p class="card-text"><%= bug.comment %></p>
+          </div>
+        </div>
+      <% }) %>
     </div>
   </div>
 
