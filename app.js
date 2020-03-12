@@ -76,6 +76,44 @@ app.get("/bugs/:id", function(req, res){
 
 });
 
+// EDIT ROUTE
+app.get("/bugs/:id/edit", function(req, res){
+    Bug.findById(req.params.id, function(err, foundBug){
+        if(err){
+            res.redirect("/bugs");
+        }
+        else{
+            res.render("edit", {bug: foundBug});
+        }
+    });
+});
+
+// UPDATE ROUTE
+app.put("/bugs/:id", function(req, res){
+    req.body.bug.body = req.sanitize(req.body.bug.body);
+    Bug.findByIdAndUpdate(req.params.id, req.body.bug, function(err, updatedBug){
+        if(err){
+            res.redirect("/bugs");
+        }
+        else{
+            res.redirect("/bugs/" + req.params.id);
+        }
+    });
+});
+
+//DELETE ROUTE
+app.delete("/bugs/:id", function(req, res){
+    //destroy bug
+    Bug.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect("/bugs");
+        }
+        else{
+            res.redirect("/bugs");
+        }
+    });
+});
+
 
 app.listen(3000, () => {
     console.log("Server is Running");
