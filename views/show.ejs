@@ -1,17 +1,19 @@
 <%- include("partials/header") %>
 
 <div class="container">
-    <div class="card" style="width: 18rem;">
+    <div class="card mx-auto" style="width: 18rem;">
         <div class="card-body text-center">
             <h4 class="card-title"><%= bug.title %></h4>
-            <h6 class="card-subtitle mb-2 text-muted"><%= bug.project %></h6>
-            <h6 class="card-subtitle mb-2 text-muted"><%= bug.area %></h6>
-            <h6 class="card-subtitle mb-2 text-muted"><%= bug.priority %></h6>
-            <p class="card-text"><%= bug.comment %></p>
-            <a class="btn btn-outline-primary" href="/bugs/<%= bug._id %>/edit">Edit</a>
-            <form id="delete" action="/bugs/<%= bug._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-outline-danger">Delete</button>
-            </form>
+            <h6 class="card-subtitle mb-2">Project: <%= bug.project %></h6>
+            <h6 class="card-subtitle mb-2">Area: <%= bug.area %></h6>
+            <h6 class="card-subtitle mb-2">Priority: <%= bug.priority %></h6>
+            <p class="card-text">Comments: <%= bug.comment %></p>
+            <span class="btn-group">
+                <a class="btn btn-outline-primary" href="/bugs/<%= bug._id %>/edit">Edit</a>
+            </span>
+                <form id="delete" class="btn-group" action="/bugs/<%= bug._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-outline-danger">Delete</button>
+                </form>
         </div>
     </div>
 </div>

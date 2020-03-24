@@ -1,7 +1,7 @@
 <%- include("partials/header") %>
 <br>
 <div class="container">
-    <form action="/bugs" method="POST">
+    <form class="mb-4" action="/bugs" method="POST">
         <div class="form-group">
             <label>Title*</label>
             <input type="text" class="form-control" name="bug[title]">
@@ -23,12 +23,12 @@
             </select>
         </div>
         <div class="form-group">
-            <label>Comments</label>
-            <textarea name="bug[comment]" cols="30" rows="10" required></textarea>
+            <label class="d-block">Comments</label>
+            <textarea name="bug[comment]" class="form-control" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-success btn-group">Submit</button>
+        <a class="btn btn-warning btn-group" href="/bugs">Go Back</a>
     </form>
-    <a class="btn btn-secondary" href="/bugs">Go Back</a>
 </div>
 
 

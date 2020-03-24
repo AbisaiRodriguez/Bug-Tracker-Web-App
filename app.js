@@ -50,7 +50,7 @@ app.get("/bugs/new", function(re, res){
 // CREATE ROUTE
 app.post("/bugs", function(req, res){
     
-    req.body.bug.comments = req.sanitize(req.body.bug.comments);
+    req.body.bug.comment = req.sanitize(req.body.bug.comment);
     // Create a new Bug and save to DB
     Bug.create(req.body.bug, function(err, newBug){
         if(err){
