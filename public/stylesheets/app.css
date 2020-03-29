@@ -1,3 +1,35 @@
 .btn-group{
     display: inline-block;
 }
+
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.navbar-brand{
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Roboto Mono', monospace;
+}
+
+p {
+    font-family: 'Roboto Mono', monospace;
+}
+
+label{ 
+    font-family: 'Roboto Mono', monospace;
+}
+
+input {
+    font-family: 'Roboto Mono', monospace;
+}
+
+div {
+    font-family: 'Roboto Mono', monospace;
+}
+
+a  .nav-link {
+    font-family: 'Roboto Mono', monospace;
+}
