@@ -119,8 +119,9 @@ app.delete("/bugs/:id", function(req, res){
     });
 });
 
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+console.log("Server is Running");
+})
 
-//app.listen(3000, () => {
-//console.log("Server is Running");
-app.listen(process.env.PORT, process.env.IP);
     
