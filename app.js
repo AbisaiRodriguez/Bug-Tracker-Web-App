@@ -4,7 +4,7 @@ methodOverride = require("method-override"),
 bodyParser = require("body-parser"),
 mongoose = require("mongoose"),
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost/bug_tracker_app';
+dbUrl = process.env.DB_URL || 'mongodb://localhost/bug_tracker_app';
 mongoose.connect(dbUrl, {useNewUrlParser: true,
     useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 
