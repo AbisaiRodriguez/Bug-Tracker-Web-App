@@ -5,7 +5,7 @@ bodyParser = require("body-parser"),
 mongoose = require("mongoose"),
 app = express();
 
-mongoose.connect("mongodb://localhost/bug_tracker_app", {useNewUrlParser: true,
+mongoose.connect("mongodb://localhost:3000/bug_tracker_app", {useNewUrlParser: true,
     useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 
 
