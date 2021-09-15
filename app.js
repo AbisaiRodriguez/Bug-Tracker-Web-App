@@ -4,8 +4,7 @@ methodOverride = require("method-override"),
 bodyParser = require("body-parser"),
 mongoose = require("mongoose"),
 
-dbUrl = process.env.DB_URL || 'mongodb://localhost/bug_tracker_app';
-mongoose.connect(dbUrl, {useNewUrlParser: true,
+mongoose.connect(process.env.DB_URL || 'mongodb://localhost/bug_tracker_app', {useNewUrlParser: true,
     useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 
 app = express();
