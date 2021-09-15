@@ -5,10 +5,18 @@ bodyParser = require("body-parser"),
 mongoose = require("mongoose"),
 app = express();
 
-mongoose.connect("mongodb://localhost:3000/bug_tracker_app", {useNewUrlParser: true,
-    useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
+//mongoose.connect("mongodb://localhost:3000/bug_tracker_app", {useNewUrlParser: true,
+  //  useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
 
-
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://abisai:ARIEM1211@cluster0.7f0ec.mongodb.net/BTA?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+  
 
 // APP Config
 
@@ -119,7 +127,7 @@ app.delete("/bugs/:id", function(req, res){
     });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 21707;
 app.listen(port, () => {
 console.log("Server is Running");
 })
