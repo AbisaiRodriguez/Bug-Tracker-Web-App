@@ -3,10 +3,15 @@ expressSanitizer = require("express-sanitizer"),
 methodOverride = require("method-override"),
 bodyParser = require("body-parser"),
 mongoose = require("mongoose"),
+
+const dbUrl = process.env.DB_URL || 'mongodb://localhost/bug_tracker_app';
+mongoose.connect(dbUrl, {useNewUrlParser: true,
+    useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false});
+
 app = express();
 
 // APP Config
-mongoose.connect("mongodb://localhost/bug_tracker_app", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
